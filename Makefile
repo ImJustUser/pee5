@@ -1,7 +1,7 @@
 ARCH            = $(shell uname -m | sed s,i[3456789]86,ia32,)
 
 OBJS            = main.o
-TARGET          = memory.efi
+TARGET          = pee5.efi
 
 EFIINC          = /usr/include/efi
 EFIINCS         = -I$(EFIINC) -I$(EFIINC)/$(ARCH) -I$(EFIINC)/protocol
@@ -30,7 +30,7 @@ LDFLAGS         = -nostdlib -znocombreloc -T $(EFI_LDS) -shared \
 
 all: $(TARGET)
 
-memory.so: $(OBJS)
+pee5.so: $(OBJS)
 	ld $(LDFLAGS) $(OBJS) -s -o $@ -lefi -lgnuefi
 
 %.efi: %.so
@@ -39,4 +39,4 @@ memory.so: $(OBJS)
 		--target=efi-rtdrv-$(ARCH) $^ $@
 
 clean:
-	rm -f memory.efi memory.so main.o *~
+	rm -f pee5.efi pee5.so main.o *~
