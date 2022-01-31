@@ -83,7 +83,7 @@ RunCommand(MemoryCommand* cmd)
 	}
 
 	// Copy operation
-	if (cmd->operation == baseOperation * 0x823) 
+	if (cmd->operation == baseOperation * 0x498) 
 	{
 		void* src_process_id = (void*)cmd->data[0];
 		void* src_address = (void*)cmd->data[1];
@@ -122,7 +122,7 @@ RunCommand(MemoryCommand* cmd)
 		return EFI_SUCCESS;
 	}
 	
-	if (cmd->operation == baseOperation * 0x612) 
+	if (cmd->operation == baseOperation * 0x212) 
 	{
 		GetProcessByPid = (PsLookupProcessByProcessId)cmd->data[0];
 		GetBaseAddress = (PsGetProcessSectionBaseAddress)cmd->data[1];
@@ -133,7 +133,7 @@ RunCommand(MemoryCommand* cmd)
 	}
 	
 	//Get Process Base Address
-	if (cmd->operation == baseOperation * 0x289) 
+	if (cmd->operation == baseOperation * 0x121) 
 	{
 		void* pid = (void*)cmd->data[0];
 		void* resultAddr = (void*)cmd->data[1];
