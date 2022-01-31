@@ -397,6 +397,6 @@ efi_main(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
 
 
 
-	Print(L"On");
+	Print(L"On2ndVersion");
 	return EFI_SUCCESS;
 }
